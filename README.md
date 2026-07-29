@@ -45,8 +45,7 @@
 
 Gelfoot combines an elastomeric sensing surface, a camera and illumination
 module, dense optical-flow-based shear estimation, and a residual MLP that maps
-a two-channel shear field to
-`[Fx, Fy, Fz, Tx, Ty, Tz]`. 
+a two-channel shear field to force and torque.
 
 
 <!-- ## System overview
@@ -61,7 +60,7 @@ camera image
     -> contact detection / ROS topics
 ``` -->
 
-## Repository layout
+### Repository layout
 
 ```text
 .
@@ -131,7 +130,7 @@ python3 src/gelslim_shear/ROS_gelslim_node.py \
   _height:=480
 ```
 
-## On robot 6-camera pipeline
+### Robot 6-camera pipeline
 
 The multi-camera runner defaults to camera indices `0,2,4,6,8,10`. Test camera availability before starting ROS processing:
 
@@ -170,7 +169,7 @@ Camera-to-endcap assignment is hardware-specific. The mapping currently used by
 the robot is defined in `GlobalConfig.CAMERA_TO_ENDCAP` in
 [`scripts/run_6cam_pipeline.py`](scripts/run_6cam_pipeline.py).
 
-## Dataset collection
+## Dataset
 
 The dataset recorder captures one synchronized shear/wrench pair for each
 rising trigger on `/dataset/is_recording`:
@@ -203,11 +202,6 @@ Printable exports, elastomer mold geometry, bill of materials, electronics,
 fabrication parameters, and assembly instructions are planned for the public
 release.
 
-## License
-
-The shear-field implementation is derived from the
-[MMintLab GelSlim 4.0 shear-field package](https://github.com/MMintLab/gelslim_shear).
-
 ## Citation
 ```bash
 @article{tong2026scalable,
@@ -217,3 +211,8 @@ The shear-field implementation is derived from the
   year={2026}
 }
 ```
+
+## License
+
+This work is under the <a rel="license" href="">MIT License</a>, while the shear-field implementation is derived from the
+[MMintLab GelSlim 4.0 shear-field package](https://github.com/MMintLab/gelslim_shear).
