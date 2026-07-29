@@ -203,7 +203,7 @@ fabrication parameters, and assembly instructions are planned for the public
 release.
 
 ## Citation
-```bash
+```text
 @article{tong2026scalable,
   title={Scalable Open-Source Visuotactile Sensor for 6-Axis Contact Wrench Estimation in Tensegrity Robots},
   author={Tong, Wenzhe and Mi, Jonathan and Yi, Xili and Fazeli, Nima and Huang, Xiaonan},
