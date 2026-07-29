@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: gelslim_shear
+Version: 0.0.1
+Summary: Gelslim tactile sensor shear field approximation via optical flow
+Home-page: https://github.com/MMintLab/gelslim_shear
+Author: WilliamvdB
+Author-email: willvdb@umich.edu
+Requires-Dist: numpy
+Requires-Dist: torch
+Requires-Dist: scipy
+Requires-Dist: opencv-python
+Requires-Dist: scikit-image

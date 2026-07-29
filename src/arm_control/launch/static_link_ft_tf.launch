@@ -1,0 +1,20 @@
+<launch>
+  <!-- Static TF: med_base -> link_ft -->
+  <arg name="parent" default="med_base"/>
+  <arg name="child" default="link_ft"/>
+  <arg name="x" default="0.105"/>
+  <arg name="y" default="0.56"/>
+  <arg name="z" default="0.56"/>
+  <!-- Zero rotation (yaw pitch roll) -->
+  <arg name="yaw" default="1.178097225"/>
+  <arg name="pitch" default="0.0"/>
+  <arg name="roll" default="0.0"/>
+
+  <!-- tf2 static transform publisher: x y z yaw pitch roll parent child -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_link_ft_tf"
+        args="$(arg x) $(arg y) $(arg z) $(arg yaw) $(arg pitch) $(arg roll) $(arg parent) $(arg child)"/>
+  <!-- A second static transform from grasp_frame to grasp_frame_2, 90 degree along z axis -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_grasp_frame_tf"
+        args="0 0 0 1.5708 0 0 grasp_frame grasp_frame_2"/>
+</launch>
+
